@@ -1,0 +1,215 @@
+/* Design system for /blank (master-prompt version) */
+.prompt-site {
+  --p-ink: #121417;
+  --p-graphite: #1a1d22;
+  --p-slate: #2a3038;
+  --p-blue: #3a4554;
+  --p-line: #d8dce3;
+  --p-line-dark: #323842;
+  --p-muted: #667085;
+  --p-muted-dark: #a8b0bd;
+  --p-paper: #f3f5f7;
+  --p-white: #ffffff;
+  --p-amber: #e6a317;
+  --p-amber-deep: #c4870a;
+  --p-font: 'Manrope', sans-serif;
+  --p-container: 1160px;
+  --p-pad: clamp(1.25rem, 4vw, 2.5rem);
+  --p-header: 4.5rem;
+  --p-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  font-family: var(--p-font);
+  color: var(--p-ink);
+  background: var(--p-paper);
+  min-height: 100vh;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .prompt-site {
+    padding-bottom: 0;
+  }
+}
+
+.prompt-site *,
+.prompt-site *::before,
+.prompt-site *::after {
+  box-sizing: border-box;
+}
+
+.prompt-site a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.prompt-site h1,
+.prompt-site h2,
+.prompt-site h3,
+.prompt-site h4 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.prompt-site p {
+  margin: 0;
+}
+
+.prompt-site ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prompt-site img {
+  max-width: 100%;
+  display: block;
+}
+
+.p-container {
+  width: 100%;
+  max-width: var(--p-container);
+  margin-inline: auto;
+  padding-inline: var(--p-pad);
+}
+
+.p-section {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+}
+
+.p-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-amber-deep);
+}
+
+.p-title {
+  font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+  max-width: 18ch;
+}
+
+.p-lead {
+  margin-top: 1rem;
+  max-width: 48ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--p-muted);
+}
+
+.p-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.25rem;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition:
+    background 0.2s var(--p-ease),
+    color 0.2s var(--p-ease),
+    border-color 0.2s var(--p-ease),
+    transform 0.2s var(--p-ease);
+}
+
+.p-btn:active {
+  transform: translateY(1px);
+}
+
+.p-btn--primary {
+  background: var(--p-amber);
+  color: var(--p-ink);
+}
+
+.p-btn--primary:hover {
+  background: var(--p-amber-deep);
+  color: #fff;
+}
+
+.p-btn--dark {
+  background: var(--p-graphite);
+  color: #fff;
+}
+
+.p-btn--dark:hover {
+  background: #000;
+}
+
+.p-btn--ghost {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+}
+
+.p-btn--ghost:hover {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.p-btn--ghost-light {
+  border-color: color-mix(in srgb, #fff 35%, transparent);
+  color: #fff;
+}
+
+.p-btn--block {
+  width: 100%;
+}
+
+.p-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.p-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--p-muted);
+}
+
+.p-field input,
+.p-field select,
+.p-field textarea {
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--p-line);
+  background: var(--p-white);
+  color: var(--p-ink);
+  font: inherit;
+  outline: none;
+}
+
+.p-field input:focus,
+.p-field select:focus,
+.p-field textarea:focus {
+  border-color: var(--p-amber);
+}
+
+.p-field textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.p-status {
+  font-size: 0.9rem;
+}
+
+.p-status--ok {
+  color: #1f7a4d;
+}
+
+.p-status--error {
+  color: #b42318;
+}
+
+.p-status--loading {
+  color: var(--p-muted);
+}
